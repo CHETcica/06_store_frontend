@@ -120,7 +120,7 @@ function AddProductForm() {
       imageURL: url,
     };
     axios
-      .post("http://localhost:5000/api/products", param)
+      .post("https://store-backend-chet008.herokuapp.com/api/product", param)
       .then((response) => {
         console.log(response.data);
         // setProduct(initProductState);
