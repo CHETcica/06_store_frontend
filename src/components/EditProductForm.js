@@ -21,7 +21,7 @@ function EditProductForm({ id }) {
       const [product, setProduct] = useState(initProductState);
       const [submitted,setSubmitted] = useState(false);
       useEffect(()=>{
-          axios.get("https://store-backend-chet008.herokuapp.com/api/product/" +id).then((response)=>{
+          axios.get("https://store-backend-chet008.herokuapp.com/api/products/" +id).then((response)=>{
                 setProduct(response.data);
           })
       }, [id])
@@ -42,7 +42,7 @@ function EditProductForm({ id }) {
           tags: product.tags,
         };
         axios
-          .put("https://store-backend-chet008.herokuapp.com/api/product/"+product._id, param)
+          .put("https://store-backend-chet008.herokuapp.com/api/products/"+product._id, param)
           .then((response) => {
             console.log(response.data);
             setProduct({...product, })
